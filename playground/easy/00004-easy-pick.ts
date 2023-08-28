@@ -31,7 +31,15 @@
 
 /* _____________ Your Code Here _____________ */
 
-type MyPick<T, K> = any
+// type MyPick<T, K> = any
+
+// 一开始理解错误，想着用never去移除
+// type MyPick<T, K extends keyof T> = { [U in keyof T as U extends keyof K ? U : never]: T[U] }
+
+type Pick<T, K extends keyof T> = {
+  [P in K]: T[P];
+}
+type MyPick<T, K extends keyof T> = { [P in K]: T[P] }
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
