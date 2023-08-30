@@ -6,3 +6,7 @@ dist
 *.local
 .playgroundcache
 .obsidian
+questions/**/*.js
+playground/**/*.js
+scripts/**/*.js
+*.js
